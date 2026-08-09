@@ -1,0 +1,388 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Della Giovampaola - Plan Event Participation (aggiornato)" id="dellagiovampaola-updated">
+    <mxGraphModel dx="2288" dy="1150" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="0" pageScale="1" pageWidth="1650" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;«view»&lt;br&gt;GCLogin&lt;/b&gt;&lt;hr&gt;- usrname: TextField&lt;br&gt;- passwd: PasswordField&lt;br&gt;- loginButton: Button&lt;br&gt;- googleLoginButton: Button&lt;br&gt;- authCode: String&lt;br&gt;- isGoogleAuth: boolean&lt;hr&gt;+ initialize()&lt;br&gt;+ registerControl(event)&lt;br&gt;+ loginControl(event)&lt;br&gt;+ googleLoginControl(event)&lt;br&gt;- setupGoogleLogin()&lt;br&gt;- openAuthCodeWindow()" vertex="1">
+          <mxGeometry height="235" width="260" x="-484" y="216" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;«view»&lt;br&gt;GCEventPageUser&lt;/b&gt;&lt;hr&gt;- eventBtn: Button&lt;br&gt;- eventBtnLabel: Label&lt;br&gt;- iconEventBtn: ImageView&lt;br&gt;- viewMap: Button&lt;br&gt;- isEventJoined: boolean&lt;hr&gt;+ initEventPageButton()&lt;br&gt;+ participateToEvent(event)&lt;br&gt;- removeParticipationToEvent(event)&lt;br&gt;+ goBack(event)&lt;br&gt;+ openLink(event)&lt;br&gt;- generateMapLink(address): String" vertex="1">
+          <mxGeometry height="224" width="260" x="-304" y="468" as="geometry" />
+        </mxCell>
+        <mxCell id="n9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;«view»&lt;br&gt;EssentialGUI&lt;/b&gt;&lt;hr&gt;# cfacade: CFacade&lt;br&gt;# sceneName: String&lt;br&gt;# scene: Scene&lt;br&gt;# alert: AlertPopup&lt;br&gt;# gui: EssentialGUI&lt;hr&gt;+ changeGUI()&lt;div&gt;+ loadApp()&lt;br&gt;+ goToHome()&amp;nbsp;&lt;div&gt;+ goToYourEvents()&lt;br&gt;+ goToNotifications()&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ goToSettings()&lt;br&gt;+ showNotification(type)&lt;br&gt;+ initCfacade()&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="236" width="260" x="-458" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="n6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#f5f5f5;strokeColor=#666666;" value="&lt;b&gt;«bean»&lt;br&gt;BEvent&lt;/b&gt;&lt;hr&gt;# eventName: String&lt;br&gt;# eventProvince: String&lt;br&gt;# eventCity: String&lt;br&gt;# eventAddress: String&lt;br&gt;# eventMusicGenre: String&lt;br&gt;# eventDate: String&lt;br&gt;# eventTime: String&lt;br&gt;- eventID: int&lt;br&gt;- eventPicData: byte[]&lt;br&gt;- eventOrganizer: String&lt;br&gt;- eventOrganizerID: int&lt;br&gt;- eventPicPath: String&lt;hr&gt;+ BEvent()&lt;br&gt;+ setEventID(eventID: int)&lt;br&gt;+ setEventOrganizer(eventOrganizer)&lt;br&gt;+ setEventOrganizerID(eventOrgID: int)&lt;br&gt;+ setEventName(eventName)&amp;nbsp;&lt;br&gt;+ setEventProvince(province)&lt;br&gt;+ setEventCity(city)&amp;nbsp;&lt;br&gt;+ setEventAddress(eventAddress)&lt;br&gt;+ setEventMusicGenre(eventMusicGenre)&lt;br&gt;+ setEventDate(eventDate)&amp;nbsp;&lt;br&gt;+ setEventTime(eventHour, eventMinutes)&lt;br&gt;+ setEventTime(eventTime)&amp;nbsp;&lt;br&gt;+ setEventPicData(picData: byte[])&lt;br&gt;+ setEventPicPath(path)&lt;br&gt;+ getEventID(): int&lt;br&gt;+ getEventOrganizer(): String&lt;br&gt;+ getEventOrganizerID(): int&lt;br&gt;+ getEventName(): String&lt;br&gt;+ getEventProvince(): String&lt;br&gt;+ getEventCity(): String&lt;br&gt;+ getEventAddress(): String&lt;br&gt;+ getEventMusicGenre(): String&lt;br&gt;+ getEventDate(): String&lt;br&gt;+ getEventTime(): String&lt;br&gt;+ getEventPicData(): byte[]&lt;br&gt;+ getEventPicPath(): String" vertex="1">
+          <mxGeometry height="570" width="288" x="56" y="191" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;b&gt;«control»&lt;br&gt;CLogin&lt;/b&gt;&lt;hr&gt;- userDao: IUserDAO&lt;br&gt;- userModel: MUser&lt;hr&gt;+ CLogin()&lt;br&gt;+ checkLoginControl(logBean, isGoogleAuth, authCode): int&lt;br&gt;+ changeCity(userID, province, city): int&lt;br&gt;+ getUsernameByID(userID): String&lt;br&gt;+ getCityByUserID(userID): String&lt;br&gt;- createLoggedSession()&lt;br&gt;+ closeLoginSession()" vertex="1">
+          <mxGeometry height="210" width="305" x="626" y="-52" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;b&gt;«control»&lt;br&gt;CEventParticipation&lt;/b&gt;&lt;hr&gt;- userEventDAO: IUserEventDAO&lt;hr&gt;+ CEventParticipation()&lt;br&gt;+ participateToEvent(eventBean): boolean&lt;br&gt;+ removeEventParticipation(eventBean): boolean&lt;br&gt;+ checkPreviousEventParticipation(eventBean): boolean" vertex="1">
+          <mxGeometry height="140" width="290" x="1246" y="344" as="geometry" />
+        </mxCell>
+        <mxCell id="n12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;b&gt;«control»&lt;br&gt;CNotification&lt;/b&gt;&lt;hr&gt;- notificationDAO: NotificationDAO&lt;br&gt;- userDAO: IUserDAO&lt;hr&gt;+ CNotification() &lt;i&gt;(era CNotification(CFacade facadeRef))&lt;/i&gt;&lt;br&gt;+ retrieveNotifications(userID): List&lt;br&gt;+ deleteNotification(...)&lt;br&gt;+ addNotificationToUsers(eventBean)&lt;br&gt;+ addNotificationToOrg(eventBean)" vertex="1">
+          <mxGeometry height="160" width="290" x="1446" y="498" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00;" value="&lt;b&gt;«model»&lt;br&gt;MUser&lt;/b&gt;&lt;hr&gt;- firstName: String&lt;br&gt;- lastName: String&lt;br&gt;- birthDate: String&lt;br&gt;- gender: String&lt;br&gt;- province: String&lt;br&gt;- city: String&lt;br&gt;- username: String&lt;br&gt;- password: String&lt;br&gt;- userType: UserTypes&lt;br&gt;- userID: int&lt;hr&gt;+ setCredentialsByBean(dataBean: BUserData)&lt;br&gt;+ setUsrAndPswByBean(dataBean: BUserData)&lt;br&gt;+ setUserType(userType)&lt;br&gt;+ setFirstName(firstname)&lt;br&gt;+ setLastName(lastname)&lt;br&gt;+ setBirthDate(birthdate)&lt;br&gt;+ setGender(gen)&lt;br&gt;+ setProvince(province)&lt;br&gt;+ setCity(city)&lt;br&gt;+ setId(id: int)&lt;div&gt;+ getFirstName(): String&lt;br&gt;+ getLastName(): String&lt;br&gt;+ getBirthDate(): String&lt;br&gt;+ getGender(): String&lt;br&gt;+ getProvince(): String&lt;br&gt;+ getCity(): String&lt;br&gt;+ getUserName(): String&amp;nbsp;&lt;br&gt;+ getPassword(): String&lt;br&gt;+ getUserType(): UserTypes&lt;br&gt;+ getUserID(): int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="465" width="280" x="1293" y="-143" as="geometry" />
+        </mxCell>
+        <mxCell id="n8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00;" value="&lt;b&gt;«model»&lt;br&gt;MEvent&lt;/b&gt;&lt;hr&gt;- eventID: int&lt;br&gt;- eventOrganizer: String&lt;br&gt;- eventOrganizerID: int&lt;br&gt;- eventName: String&lt;br&gt;- eventProvince: String&lt;br&gt;- eventCity: String&lt;br&gt;- eventAddress: String&lt;br&gt;- eventMusicGenre: String&lt;br&gt;- eventDate: String&lt;br&gt;- eventTime: String&lt;br&gt;- eventPicData: byte[]&lt;br&gt;- eventPicPath: String&lt;hr&gt;+ MEvent(eventBean: BEvent) / MEvent()&lt;br&gt;+ getEventInfo(): BEvent&lt;br&gt;+ setEventID(eventID: int)&lt;br&gt;+ setEventOrganizer(eventOrg)&lt;br&gt;+ setEventOrganizerID(eventOrgID: int)&lt;br&gt;+ setEventName(eventName)&lt;br&gt;+ setEventProvince(eventProvince)&lt;br&gt;+ setEventCity(eventCity)&lt;br&gt;+ setEventAddress(eventAddress)&lt;br&gt;+ setEventMusicGenre(eventMusicGenre)&lt;br&gt;+ setEventDate(eventDate)&lt;br&gt;+ setEventTime(eventTime)&lt;br&gt;+ setEventPicDataFromDB(picData: byte[])&lt;br&gt;+ setEventPicPath(picPath)&lt;br&gt;+ getEventID(): int&lt;br&gt;+ getEventOrganizer(): String&lt;br&gt;+ getEventName(): String&lt;br&gt;+ getEventProvince(): String&lt;br&gt;+ getEventCity(): String&lt;br&gt;+ getEventAddress(): String&lt;br&gt;+ getEventMusicGenre(): String&lt;br&gt;+ getEventDate(): String&lt;br&gt;+ getEventTime(): String&lt;br&gt;+ getEventPicData(): byte[]&lt;br&gt;+ getEventPicPath(): String&amp;nbsp;" vertex="1">
+          <mxGeometry height="580" width="283" x="1603" y="-128" as="geometry" />
+        </mxCell>
+        <mxCell id="n11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;b&gt;«session»&lt;br&gt;LoggedUser&lt;/b&gt;&lt;hr&gt;&lt;i&gt;(classe statica, nessuna istanza; costruttore privato)&lt;/i&gt;&lt;br&gt;- username: String &lt;i&gt;(static)&lt;/i&gt;&lt;br&gt;- userType: UserTypes &lt;i&gt;(static)&lt;/i&gt;&lt;br&gt;- firstName: String &lt;i&gt;(static)&lt;/i&gt;&lt;br&gt;- lastName: String &lt;i&gt;(static)&lt;/i&gt;&lt;br&gt;- birthDate: String &lt;i&gt;(static)&lt;/i&gt;&lt;br&gt;- gender: String &lt;i&gt;(static)&lt;/i&gt;&lt;br&gt;- city: String &lt;i&gt;(static)&lt;/i&gt;&lt;br&gt;- province: String &lt;i&gt;(static)&lt;/i&gt;&lt;br&gt;- status: String &lt;i&gt;(static)&lt;/i&gt;&lt;br&gt;- userID: int &lt;i&gt;(static)&lt;/i&gt;&lt;hr&gt;+ setUserName(usrName)&lt;br&gt;+ setUserType(type)&lt;br&gt;+ setFirstName(firstname)&lt;br&gt;+ setLastName(lastname)&lt;br&gt;+ setBirthDate(birthdate)&lt;br&gt;+ setGender(gen)&lt;br&gt;+ setProvince(prov)&lt;br&gt;+ setCity(cit)&lt;br&gt;+ setStatus(stat)&lt;br&gt;+ setUserID(id: int)&lt;br&gt;+ getUserName(): String&lt;br&gt;+ getUserType(): UserTypes&lt;br&gt;+ getFirstName(): String&lt;br&gt;+ getLastName(): String&lt;br&gt;+ getBirthDate(): String&lt;br&gt;+ getGender(): String&lt;br&gt;+ getProvince(): String&lt;br&gt;+ getCity(): String&lt;br&gt;+ getUserID(): int&lt;br&gt;+ getStatus(): String" vertex="1">
+          <mxGeometry height="480" width="320" x="1441" y="674" as="geometry" />
+        </mxCell>
+        <mxCell id="n13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;«dao»&lt;br&gt;UserDAO&lt;/b&gt;&lt;hr&gt;+ checkLoginInfo(...)&lt;br&gt;+ registerUser(...)&lt;br&gt;+ getUserIDByUsername(...)&lt;br&gt;+ setStatus(...)&amp;nbsp;&lt;div&gt;+ changeCity(...)&lt;br&gt;+ getUsernameByID(...)&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ getUserCityByID(...)&lt;br&gt;+ getUsersInCity(...)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="170" width="280" x="444" y="951" as="geometry" />
+        </mxCell>
+        <mxCell id="n15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;«dao»&lt;br&gt;UserEventDAO&lt;/b&gt;&lt;br&gt;&lt;hr&gt;+ joinUserToEvent(eventModel): boolean&lt;br&gt;+ removeUserToEvent(eventModel): boolean&lt;br&gt;+ checkPreviousParticipation(eventID)&lt;br&gt;+ getParticipationsToEvent(id): int" vertex="1">
+          <mxGeometry height="108" width="280" x="1100" y="749" as="geometry" />
+        </mxCell>
+        <mxCell id="n16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;b&gt;«singleton»&lt;br&gt;SingletonDBSession&lt;/b&gt;&lt;hr&gt;- instance: SingletonDBSession &lt;i&gt;(static)&lt;/i&gt;&lt;br&gt;- username: String&lt;br&gt;- password: String&lt;br&gt;- inputStream: InputStream&lt;br&gt;# connection: Connection&lt;hr&gt;- SingletonDBSession() &lt;i&gt;(costruttore privato)&lt;/i&gt;&lt;br&gt;+ getInstance(): SingletonDBSession &lt;i&gt;(static)&lt;/i&gt;&lt;br&gt;+ getConnection(): Connection&lt;br&gt;+ getPropValues(): String[]&lt;br&gt;+ closeConn()" vertex="1">
+          <mxGeometry height="190" width="260" x="1110" y="893" as="geometry" />
+        </mxCell>
+        <mxCell id="n18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;«interface»&lt;br&gt;Notification&lt;/b&gt;&lt;hr&gt;+ setNotificationType(msgType: NotificationTypes)&lt;br&gt;+ setCity(city: String)&lt;br&gt;+ setNewCity(newCity: String)&lt;br&gt;+ setClientID(notifiedID: Integer)&lt;br&gt;+ setNotifierID(notifierID: Integer)&lt;br&gt;+ setEventID(eventID: Integer)&lt;br&gt;+ setNotificationID(notificationID: Integer)&lt;br&gt;+ setUserType(userType: UserTypes)&lt;br&gt;+ getNotificationType(): NotificationTypes&lt;br&gt;+ getCity(): String&lt;br&gt;+ getNewCity(): String&lt;br&gt;+ getClientID(): Integer&lt;br&gt;+ getNotifierID(): Integer&lt;br&gt;+ getEventID(): Integer&lt;br&gt;+ getNotificationID(): Integer&lt;br&gt;+ getUserType(): UserTypes" vertex="1">
+          <mxGeometry height="274.5" width="300" x="1576" y="1220.5" as="geometry" />
+        </mxCell>
+        <mxCell id="n19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00;" value="&lt;b&gt;«model»&lt;br&gt;LocalNotification&lt;/b&gt;&lt;hr&gt;implements Notification&lt;hr&gt;- messageType: NotificationTypes&lt;br&gt;- notifiedID: Integer&lt;br&gt;- eventID: Integer&lt;br&gt;- notifierID: Integer&lt;br&gt;- notificationID: Integer&lt;hr&gt;+ setNotificationType(msgType)&lt;br&gt;+ setCity(city)&amp;nbsp;&lt;br&gt;+ setNewCity(newCity)&amp;nbsp;&lt;br&gt;+ setClientID(notifiedID)&amp;nbsp;&lt;br&gt;+ setEventID(eventID)&lt;br&gt;+ setUserType(userType)&amp;nbsp;&lt;div&gt;+ setNotifierID(notifierID)&lt;br&gt;+ setNotificationID(notificationID)&lt;br&gt;+ getNotificationType(): NotificationTypes&lt;br&gt;+ getCity(): String&lt;br&gt;+ getNewCity(): String&amp;nbsp;&lt;br&gt;+ getClientID(): Integer&amp;nbsp;&lt;br&gt;+ getEventID(): Integer&lt;br&gt;+ getUserType(): UserTypes&lt;br&gt;+ getNotifierID(): Integer&lt;br&gt;+ getNotificationID(): Integer&lt;i&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="396" width="300" x="1090" y="1135" as="geometry" />
+        </mxCell>
+        <mxCell id="n21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;«interface»&lt;br&gt;NotificationDAO&lt;/b&gt;&lt;hr&gt;+ addNotificationToUsers(...)&lt;br&gt;+ getNotificationsByUserID(...)&lt;br&gt;+ deleteNotification(...)" vertex="1">
+          <mxGeometry height="120" width="260" x="236" y="1508" as="geometry" />
+        </mxCell>
+        <mxCell id="n22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;«dao»&lt;br&gt;NotificationDAOJDBC&lt;/b&gt;&lt;br&gt;&lt;hr&gt;- notiFactory: NotificationFactory&lt;hr&gt;+ NotificationDAOJDBC()&lt;br&gt;+ addNotificationToUsers(notifiedIDs, notificationTypes, eventID)&lt;br&gt;+ getNotificationsByUserID(usrID): ArrayList&lt;br&gt;+ deleteNotification(notificationID): boolean" vertex="1">
+          <mxGeometry height="151" width="327" x="425.5" y="1743" as="geometry" />
+        </mxCell>
+        <mxCell id="n23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;«dao»&lt;br&gt;NotificationDAOCSV&lt;/b&gt;&lt;br&gt;&lt;hr&gt;- CSV_DB_NAME: String&lt;br&gt;- entriesNumber: int&lt;br&gt;- fd: File&lt;br&gt;- notiFactory: NotificationFactory&lt;hr&gt;+ NotificationDAOCSV()&lt;br&gt;+ addNotificationToUsers(...)&amp;nbsp;&lt;div&gt;+ getNotificationsByUserID(...)&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ deleteNotification(...)&lt;br&gt;+ createFileFromDesc(fd)&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ createFolder(folderFile)&lt;br&gt;+ updateLastIndex()&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ moveTempIntoCSV()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="226" width="300" x="1103" y="1543" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="n1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;endSize=17;" target="n2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-65.5" y="285.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nI0wuy-ttQZ_AjxtHzt6-8" connectable="0" parent="e1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="use" vertex="1">
+          <mxGeometry relative="1" x="0.0338" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;entryX=1.008;entryY=0.633;entryDx=0;entryDy=0;entryPerimeter=0;labelWidth=1;endSize=17;" target="n2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="623.61" y="40.58" as="sourcePoint" />
+            <mxPoint x="201.29999999999973" y="-21.590000000000146" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hEw6RXKtcmil6v8WgfBP-3" connectable="0" parent="e2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="use" vertex="1">
+          <mxGeometry relative="1" x="-0.0495" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="n3" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;endSize=17;" target="n4" value="use">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="n3" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=diamondThin;elbow=vertical;fontSize=10;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=bottom;spacingLeft=80;entryX=0.57;entryY=-0.015;entryDx=0;entryDy=0;endFill=1;endSize=25;exitX=0;exitY=0.957;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;" target="n28" value="">
+          <mxGeometry relative="1" y="-91" as="geometry">
+            <mxPoint x="1" y="-10" as="offset" />
+            <Array as="points">
+              <mxPoint x="624" y="149.01" />
+              <mxPoint x="25.6" y="148.1" />
+            </Array>
+            <mxPoint x="1045.9099999999999" y="208.000909090909" as="sourcePoint" />
+            <mxPoint x="466.000909090909" y="787.91" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="n3" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;endSize=17;entryX=0.006;entryY=0.113;entryDx=0;entryDy=0;entryPerimeter=0;" target="n11" value="aggiorna">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="771.04" y="248" />
+              <mxPoint x="1086.08" y="248" />
+              <mxPoint x="1086.08" y="728.24" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="n5" style="html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;exitX=1.001;exitY=0.678;exitDx=0;exitDy=0;exitPerimeter=0;endSize=17;entryX=0.152;entryY=0.002;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" value="call">
+          <mxGeometry relative="1" x="0.6804" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="-24" y="623.92" />
+              <mxPoint x="-24" y="182" />
+              <mxPoint x="510.92" y="182" />
+            </Array>
+            <mxPoint x="-23.96999999999973" y="621.42" as="sourcePoint" />
+            <mxPoint x="510.9299999999999" y="426.91" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="n7" style="html=1;endArrow=open;elbow=vertical;fontSize=10;dashed=1;exitX=1.002;exitY=0.133;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="n8" value="use">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1584.1" y="366.62" />
+              <mxPoint x="1584.1" y="166.52" />
+            </Array>
+            <mxPoint x="1411" y="370.41" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="n7" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;endSize=17;" target="n29" value="use">
+          <mxGeometry relative="1" x="-0.0018" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="n10" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=diamondThin;endFill=1;endSize=25;elbow=vertical;fontSize=10;" target="n3" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1061.0700000000002" y="568.07" />
+              <mxPoint x="1061.0700000000002" y="108" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="n10" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=diamondThin;endFill=1;endSize=25;dashed=1;fontSize=10;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="n7" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="966" y="647.9965217391305" as="sourcePoint" />
+            <mxPoint x="1366.0000000000005" y="413.04" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="n10" style="html=1;endArrow=diamondThin;endFill=1;endSize=25;dashed=1;fontSize=10;exitX=1;exitY=0.563;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;entryX=0.008;entryY=0.656;entryDx=0;entryDy=0;entryPerimeter=0;" target="n12" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1442.8" y="603.11" />
+            </Array>
+            <mxPoint x="666" y="588.9500000000003" as="sourcePoint" />
+            <mxPoint x="1433" y="588" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" style="html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;strokeWidth=1;endSize=17;edgeStyle=orthogonalEdgeStyle;" target="n10" value="use">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-197.67" y="773" />
+              <mxPoint x="369.67" y="773" />
+              <mxPoint x="369.67" y="613" />
+            </Array>
+            <mxPoint x="-197.67" y="770.5" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="n17" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;endSize=17;exitX=0.087;exitY=0.998;exitDx=0;exitDy=0;exitPerimeter=0;" target="n21" value="use">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="561.4" y="1234.38" />
+              <mxPoint x="560.82" y="1234.38" />
+              <mxPoint x="560.82" y="1238.06" />
+              <mxPoint x="366" y="1238.06" />
+            </Array>
+            <mxPoint x="476" y="1238" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="n22" style="html=1;endArrow=block;endFill=0;dashed=1;fontSize=10;endSize=17;entryX=0.562;entryY=1.047;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.085;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="n21" value="implements">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="425.47" y="1758.37" />
+              <mxPoint x="382.11" y="1758.37" />
+            </Array>
+            <mxPoint x="1120.5" y="1630.04" as="sourcePoint" />
+            <mxPoint x="267.12" y="1618.0026315789476" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="n23" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;dashed=1;fontSize=10;endSize=17;exitX=0;exitY=0.368;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.167;entryDx=0;entryDy=0;entryPerimeter=0;" target="n21" value="implements">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="798.46" y="1626.19" />
+              <mxPoint x="798.46" y="1528" />
+            </Array>
+            <mxPoint x="931" y="1458.0033333333336" as="sourcePoint" />
+            <mxPoint x="266" y="1458" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="n22" style="html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;entryX=0.712;entryY=1.003;entryDx=0;entryDy=0;endSize=17;edgeStyle=orthogonalEdgeStyle;exitX=0.953;exitY=0.004;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;" target="n17" value="usa">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1098.8400000000001" y="1568.16" as="sourcePoint" />
+            <mxPoint x="735.8900000000009" y="1263.000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;entryX=0.359;entryY=1.005;entryDx=0;entryDy=0;entryPerimeter=0;endSize=17;" target="n17" value="use">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="636" y="1438.1" />
+              <mxPoint x="636" y="1258.81" />
+            </Array>
+            <mxPoint x="1096" y="1438.090909090909" as="sourcePoint" />
+            <mxPoint x="666.090909090909" y="1268" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="n17" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;endSize=17;exitX=1;exitY=0.779;exitDx=0;exitDy=0;exitPerimeter=0;" target="n19" value="create">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="988.55" y="1205.6" />
+              <mxPoint x="988.55" y="1205.6" />
+            </Array>
+            <mxPoint x="878.52" y="1206.84" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="1" source="n19" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;dashed=1;fontSize=10;endSize=17;" target="n18" value="implements">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" edge="1" parent="1" source="n13" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;endSize=17;entryX=0.004;entryY=0.714;entryDx=0;entryDy=0;entryPerimeter=0;" target="n16" value="use">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1043.71" y="1118" />
+              <mxPoint x="1043.71" y="1028.71" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e24" edge="1" parent="1" source="n15" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;endSize=17;exitX=1.004;exitY=0.54;exitDx=0;exitDy=0;exitPerimeter=0;" target="n16" value="usa">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1423.67" y="807.33" />
+              <mxPoint x="1423.67" y="988" />
+            </Array>
+            <mxPoint x="1286.8" y="878" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;NotificationFactory&lt;/b&gt;&lt;hr&gt;+ createNotification(notiType, clientOrNotifiedID,&lt;br&gt;  notiProps, eventID, cityData, usrType): Notification" vertex="1">
+          <mxGeometry height="74" width="280" x="537" y="1152" as="geometry" />
+        </mxCell>
+        <mxCell id="n26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=light-dark(#F5F5F5,#2E2100);strokeColor=#666666;" value="&lt;b&gt;«model»&lt;br&gt;CityData&lt;/b&gt;&lt;hr&gt;- city: String&lt;br&gt;- newCity: String&lt;hr&gt;+ CityData(city, newCity)&lt;br&gt;+ setCity(city)&lt;br&gt;+ setNewCity(newCity)&lt;br&gt;+ getCity(): String&lt;br&gt;+ getNewCity(): String" vertex="1">
+          <mxGeometry height="172" width="260" x="34" y="1087" as="geometry" />
+        </mxCell>
+        <mxCell id="n27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#f5f5f5;strokeColor=#666666;" value="&lt;b&gt;«model»&lt;br&gt;NotificationProperties&lt;/b&gt;&lt;hr&gt;- notifierID: Integer&lt;br&gt;- notificationID: Integer&lt;hr&gt;+ NotificationProperties(notifierID, notificationID)&lt;br&gt;+ getNotifierID()&lt;div&gt;+ getNotificationID()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="260" x="38" y="1331" as="geometry" />
+        </mxCell>
+        <mxCell id="e26" edge="1" parent="1" source="n17" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;endSize=17;" target="n26" value="use">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="435.46" y="1193.08" />
+              <mxPoint x="435.46" y="1193.08" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e27" edge="1" parent="1" source="n17" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;exitX=0.296;exitY=1.011;exitDx=0;exitDy=0;endSize=17;exitPerimeter=0;" value="use">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="618.9200000000001" y="1407.83" />
+            </Array>
+            <mxPoint x="611.6799999999998" y="1267.9999999999998" as="sourcePoint" />
+            <mxPoint x="297.56" y="1407.83" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e28" edge="1" parent="1" source="n1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;fontSize=10;endSize=17;" target="n9" value="extends">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;b&gt;«controller»&lt;br&gt;CFacade (Facade)&lt;/b&gt;&lt;hr&gt;- loginController: CLogin &lt;i&gt;(final)&lt;/i&gt;&lt;br&gt;- regController: CRegistration &lt;i&gt;(final)&lt;/i&gt;&lt;br&gt;- manageEventController: CManageEvent &lt;i&gt;(final)&lt;/i&gt;&lt;br&gt;- eventParticipationController: CEventParticipation &lt;i&gt;(final)&lt;/i&gt;&lt;br&gt;- notificationController: CNotification &lt;i&gt;(final)&lt;/i&gt;&lt;br&gt;- analyticsController: CAnalytics &lt;i&gt;(final)&lt;/i&gt;&lt;br&gt;- groupController: CGroup &lt;i&gt;(final)&lt;/i&gt;&lt;br&gt;- chatController: CGroupChat &lt;i&gt;(final)&lt;/i&gt;&lt;br&gt;- chatView: ChatView&lt;br&gt;- notiView: NotificationView &lt;i&gt;(static)&lt;/i&gt;&lt;hr&gt;+ CFacade()&lt;div&gt;+ loginUser(bean, isGoogleAuth, authCode): int&lt;br&gt;+ signOut()&lt;br&gt;+ participateToEvent(eventBean): boolean&lt;br&gt;+ removeEventParticipation(eventBean): boolean&lt;br&gt;+ checkPreviousEventParticipation(eventBean): boolean&lt;br&gt;+ retrieveNotifications(userID)&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ showNotification(type)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="311" width="300" x="444" y="428" as="geometry" />
+        </mxCell>
+        <mxCell id="n28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;«interface»&lt;br&gt;IUserDAO&lt;/b&gt;&lt;hr&gt;+ checkLoginInfo(...)&lt;br&gt;+ getUserCityByID(userID)&lt;br&gt;+ registerUser(userModel)&lt;br&gt;+ getUserIDByUsername(username)&lt;br&gt;+ setStatus(userID, status)&lt;br&gt;+ changeCity(userID, province, city)&lt;br&gt;+ getUsernameByID(userID)&lt;br&gt;+ getUsersInCity(city)" vertex="1">
+          <mxGeometry height="175" width="280" x="-134" y="798" as="geometry" />
+        </mxCell>
+        <mxCell id="n29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;«interface»&lt;br&gt;IUserEventDAO&lt;/b&gt;&lt;hr&gt;+ joinUserToEvent(eventModel): boolean &lt;i&gt;throws EventAlreadyDeleted&lt;/i&gt;&lt;br&gt;+ removeUserToEvent(eventModel): boolean&lt;br&gt;+ checkPreviousParticipation(eventID) &lt;i&gt;throws DuplicateEventParticipation&lt;/i&gt;&lt;br&gt;+ getParticipationsToEvent(id): int" vertex="1">
+          <mxGeometry height="150" width="280" x="726" y="262" as="geometry" />
+        </mxCell>
+        <mxCell id="n30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;«dao»&lt;br&gt;UserDAOInMemory&lt;/b&gt;&lt;hr&gt;+ checkLoginInfo(...)&amp;nbsp;&lt;div&gt;+ getUserCityByID(...)&lt;br&gt;+ registerUser(...)&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ getUserIDByUsername(...)&lt;br&gt;+ setStatus(...)&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ changeCity(...)&lt;br&gt;+ getUsernameByID(...)&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ getUsersInCity(...)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="162" width="300" x="439" y="758" as="geometry" />
+        </mxCell>
+        <mxCell id="n31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;«dao»&lt;br&gt;UserEventDAOInMemory&lt;/b&gt;&lt;br&gt;&lt;hr&gt;+ joinUserToEvent(...)&lt;div&gt;+ removeUserToEvent(...)&lt;br&gt;+ checkPreviousParticipation(...)&lt;br&gt;+ getParticipationsToEvent(...)&lt;i&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="202" x="804" y="819" as="geometry" />
+        </mxCell>
+        <mxCell id="n32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;«dao»&lt;br&gt;NotificationDAOInMemory&lt;/b&gt;&lt;hr&gt;- notiFactory: NotificationFactory&lt;hr&gt;+ addNotificationToUsers(...)&lt;div&gt;+ getNotificationsByUserID(...)&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ deleteNotification(...)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="122" width="300" x="778" y="1648" as="geometry" />
+        </mxCell>
+        <mxCell id="n33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;b&gt;«utility»&lt;br&gt;PersistenceClass&lt;/b&gt;&lt;hr&gt;&lt;div&gt;- persistenceType: PersistenceTypes &lt;i&gt;(static, default JDBC)&lt;/i&gt;&lt;hr&gt;+ setPersistenceType(type) &lt;i&gt;(static)&lt;/i&gt;&lt;br&gt;+ getPersistenceType(): PersistenceTypes &lt;i&gt;(static)&lt;/i&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="280" x="1816" y="619" as="geometry" />
+        </mxCell>
+        <mxCell id="n34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;«view»&lt;br&gt;GCModeSelection&lt;/b&gt;&lt;hr&gt;+ demoModeControl(event)&lt;br&gt;+ normalModeControl(event)" vertex="1">
+          <mxGeometry height="94" width="161" x="-494" y="53" as="geometry" />
+        </mxCell>
+        <mxCell id="e29" edge="1" parent="1" source="n13" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;dashed=1;fontSize=10;jumpSize=17;endSize=17;" target="n28" value="implements">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e30" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;dashed=1;fontSize=10;endSize=17;" target="n28" value="implements">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="282.38" y="846.25" />
+              <mxPoint x="282.38" y="846.25" />
+            </Array>
+            <mxPoint x="438.13" y="845.55" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e31" edge="1" parent="1" source="n15" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;dashed=1;fontSize=10;endSize=17;" target="n29" value="implements">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1042.62" y="803" />
+              <mxPoint x="1042.62" y="508" />
+              <mxPoint x="886.08" y="508" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e32" edge="1" parent="1" source="n31" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;dashed=1;fontSize=10;exitX=0.37;exitY=-0.015;exitDx=0;exitDy=0;exitPerimeter=0;endSize=17;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="n29" value="realize">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="985.997037037037" y="908" as="sourcePoint" />
+            <mxPoint x="845.997037037037" y="428" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e33" edge="1" parent="1" source="n32" style="html=1;endArrow=block;endFill=0;dashed=1;fontSize=10;entryX=1;entryY=0.583;entryDx=0;entryDy=0;entryPerimeter=0;endSize=17;edgeStyle=elbowEdgeStyle;" target="n21" value="implements">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="606" y="1678" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e34" edge="1" parent="1" source="n32" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;exitX=0.474;exitY=-0.007;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.578;entryY=0.989;entryDx=0;entryDy=0;entryPerimeter=0;endSize=17;" target="n17" value="use">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1116" y="1870" as="sourcePoint" />
+            <mxPoint x="696.9" y="1298" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e35" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endSize=17;" target="n33" value="use">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="885.5" y="-169.67" />
+              <mxPoint x="1956" y="-169.67" />
+            </Array>
+            <mxPoint x="885.53" y="-55.24" as="sourcePoint" />
+            <mxPoint x="2116.0370370370374" y="512.96" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e36" edge="1" parent="1" source="n7" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;entryX=0.288;entryY=-0.013;entryDx=0;entryDy=0;entryPerimeter=0;endSize=17;" target="n33" value="use">
+          <mxGeometry relative="1" x="0.0045" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1896.6" y="474" />
+            </Array>
+            <mxPoint x="2076.04" y="538" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e37" edge="1" parent="1" source="n12" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;endSize=17;" target="n33" value="use">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e38" edge="1" parent="1" source="n34" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;fontSize=10;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;endSize=17;" target="n9" value="extends">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-504" y="100" />
+              <mxPoint x="-504" y="548.29" />
+              <mxPoint x="-393" y="548.29" />
+            </Array>
+            <mxPoint x="-234" y="-142" as="sourcePoint" />
+            <mxPoint x="-524" y="487.99999999999955" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e39" edge="1" parent="1" style="html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;entryX=0.79;entryY=0.007;entryDx=0;entryDy=0;entryPerimeter=0;endSize=17;edgeStyle=orthogonalEdgeStyle;" target="n33" value="use">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-382.7" y="-313" />
+              <mxPoint x="2037.2" y="-313" />
+            </Array>
+            <mxPoint x="-382.71" y="51.82" as="sourcePoint" />
+            <mxPoint x="2104.68" y="691.6400000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hEw6RXKtcmil6v8WgfBP-5" edge="1" parent="1" source="n5" style="html=1;endArrow=open;elbow=vertical;dashed=1;fontSize=10;entryX=0.008;entryY=0.392;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.538;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;endSize=17;edgeStyle=orthogonalEdgeStyle;" target="n6" value="use">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-44" y="406.01" as="sourcePoint" />
+            <mxPoint x="428" y="425.01" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=11;fillColor=#f5f5f5;strokeColor=#666666;" value="&lt;b&gt;«bean»&lt;br&gt;BUserData&lt;/b&gt;&lt;hr&gt;- userID: int&lt;br&gt;- firstName: String&lt;br&gt;- lastName: String&lt;br&gt;- birthDate: LocalDate&lt;br&gt;- gender: String&lt;br&gt;- province: String&lt;br&gt;- city: String&lt;br&gt;- userType: UserTypes&lt;br&gt;- username: String&lt;br&gt;- password: String&lt;hr&gt;+ BUserData() / BUserData(username) / BUserData(username, password)&lt;br&gt;+ setFirstName(firstName)&lt;br&gt;+ setLastName(lastName)&lt;br&gt;+ setBirthDate(birthDate: LocalDate)&lt;div&gt;+ setProvince(province&lt;br&gt;+ setCity(city)&lt;br&gt;+ setGender(gender)&lt;br&gt;+ setType(typeOfUsr: UserTypes)&lt;br&gt;+ setUsername(usrName)&amp;nbsp;&lt;br&gt;+ setPassword(passwd)&lt;br&gt;+ setUserID(id: int)&lt;br&gt;+ getFirstName(): String&lt;br&gt;+ getLastName(): String&lt;br&gt;+ getBirthDate(): LocalDate&lt;br&gt;+ getGender(): String&lt;br&gt;+ getUserType(): UserTypes&lt;br&gt;+ getUsername(): String&lt;br&gt;+ getPassword(): String&lt;br&gt;+ getProvince(): String&lt;br&gt;+ getCity(): String&lt;br&gt;+ getUserID(): int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="489" width="280" x="-314" y="-298" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

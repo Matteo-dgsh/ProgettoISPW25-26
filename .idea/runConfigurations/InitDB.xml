@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="InitDB" type="DatabaseScript">
+    <script-file value="$PROJECT_DIR$/sql/NightAgentInit.sql" />
+    <script-file value="$PROJECT_DIR$/sql/NightAgentDB.sql" />
+    <script-mode>FILE</script-mode>
+    <data-source id="9b569c31-1b58-4579-a65f-17e669eda3e8" />
+    <method v="2" />
+  </configuration>
+</component>

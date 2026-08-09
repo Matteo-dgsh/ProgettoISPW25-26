@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RunWithServer" type="CompoundRunConfigurationType">
+    <toRun name="EssentialGUI" type="Application" />
+    <toRun name="Server" type="Application" />
+    <toRun name="InitDB" type="DatabaseScript" />
+    <method v="2" />
+  </configuration>
+</component>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.graphiccontrollers.GCAnalytics">
+    <children>
+      <Rectangle fill="#B4B6EC" height="88.0" arcHeight="26.0" arcWidth="26.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="211.0" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="88.0" prefWidth="124.0" style="-fx-border-width: 0; -fx-background-color: transparent; -fx-background-insets: 0; -fx-background-radius: 0;">
+         <font>
+            <Font name="System" size="18.0" />
+         </font>
+         <graphic>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" styleClass="hbox-nav">
+               <children>
+                  <Label styleClass="label-nav" text="Home">
+                     <font>
+                        <Font name="System" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icons/home.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" layoutX="335.0" mnemonicParsing="false" onMouseClicked="#goToYourEvents" prefHeight="88.0" prefWidth="143.0" style="-fx-background-color: transparent; -fx-background-insets: 0; -fx-background-radius: 0;">
+         <font>
+            <Font name="System" size="18.0" />
+         </font>
+         <graphic>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" styleClass="hbox-nav">
+               <children>
+                  <Label styleClass="label-nav" text="Events">
+                     <font>
+                        <Font name="System" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icons/eventOrg.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" layoutX="478.0" mnemonicParsing="false" onMouseClicked="#goToNotifications" prefHeight="88.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-background-insets: 0; -fx-background-radius: 0;">
+         <font>
+            <Font name="System" size="18.0" />
+         </font>
+         <graphic>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" styleClass="hbox-nav">
+               <children>
+                  <Label styleClass="label-nav" text="Notifications">
+                     <font>
+                        <Font name="System" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icons/notifications.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" layoutX="651.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="149.0" style="-fx-background-color: #7477E6; -fx-background-insets: 0; -fx-background-radius: 0; -fx-effect: dropshadow(gaussian, rgba(36,31,69,0.35), 10, 0, 0, 3);">
+         <font>
+            <Font name="System" size="18.0" />
+         </font>
+         <graphic>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" styleClass="hbox-nav">
+               <children>
+                  <Label styleClass="label-nav" text="Settings">
+                     <font>
+                        <Font name="System" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icons/settings.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </graphic>
+      </Button>
+        <Button fx:id="goBackBtn" layoutX="614.0" layoutY="524.0" mnemonicParsing="false" onMouseClicked="#goToYourEvents" prefHeight="50.0" prefWidth="150.0" style="-fx-background-radius: 0;">
+            <font>
+                <Font name="System" size="20.0" />
+            </font>
+         <graphic>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" styleClass="hbox-nav">
+               <children>
+                  <Label styleClass="label-nav" text="Go back">
+                     <font>
+                        <Font name="System" size="19.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="41.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icons/goback.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </graphic>
+        </Button>
+      <Button layoutX="550.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#exportAnalyticsFile" prefHeight="51.0" prefWidth="213.0">
+         <font>
+            <Font name="System" size="16.0" />
+         </font>
+         <graphic>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" styleClass="hbox-nav">
+               <children>
+                  <Label styleClass="label-nav" text="Export as TXT file">
+                     <font>
+                        <Font name="System" size="19.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="41.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icons/save_export.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </graphic>
+      </Button>
+      <Text layoutX="52.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event analytics" wrappingWidth="201.0">
+         <font>
+            <Font name="System" size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="422.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City:" wrappingWidth="48.13665771484375">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="51.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event name:" wrappingWidth="112.93670654296875">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="51.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:" wrappingWidth="80.93670654296875">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="51.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Planned participations:" wrappingWidth="200.9366912841797">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="422.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Participants:" wrappingWidth="112.93670654296875">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="eventNameL" layoutX="166.0" layoutY="350.0" prefHeight="35.0" prefWidth="247.0">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="cityL" layoutX="474.0" layoutY="350.0" prefHeight="35.0" prefWidth="282.0">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="addressL" layoutX="135.0" layoutY="392.0" prefHeight="35.0" prefWidth="628.0">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateL" layoutX="107.0" layoutY="434.0" prefHeight="35.0" prefWidth="282.0">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="timesClickedL" layoutX="551.0" layoutY="434.0" prefHeight="35.0" prefWidth="201.0">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="plannedL" layoutX="258.0" layoutY="476.0" prefHeight="35.0" prefWidth="150.0">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="participantsL" layoutX="542.0" layoutY="475.0" prefHeight="35.0" prefWidth="213.0">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="eventImageView" fitHeight="178.0" fitWidth="316.0" layoutX="52.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" />
+      <Text layoutX="51.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:" wrappingWidth="48.13665771484375">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="422.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Times clicked:" wrappingWidth="130.39999999999986">
+         <font>
+            <Font name="System" size="20.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="58.0" fitWidth="48.0" layoutX="263.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/analytics.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="84.0" fitWidth="150.0" layoutX="14.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" smooth="true">
+         <image>
+            <Image url="@../../images/home/Logo%20NightAgent_plainwhite400.png" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+    </children>
+    <rotationAxis>
+        <Point3D />
+    </rotationAxis>
+</AnchorPane>

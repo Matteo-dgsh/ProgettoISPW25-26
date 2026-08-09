@@ -1,0 +1,15 @@
+++++++++++++++Analytics of tt ++++++++++++++
+
+Event Name: tt
+Province: Roma
+City: Roma
+Address: Via Roma
+Music genre: Rock
+Date: 26-08-2025
+Time: 22:00
+Times clicked: 4749
+Participants: 0
+Planned participants: 0
+
+
+++++++++++++++End of file++++++++++++++
