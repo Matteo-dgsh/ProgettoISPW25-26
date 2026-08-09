@@ -1,6 +1,6 @@
-# ISPWproject2023-2024
+# ISPWproject2025-2026
 
-Progetto ISPW A.A 2025-2025 Moscetta-Della Giovampaola
+Progetto ISPW A.A 2025-2026 Moscetta-Della Giovampaola
 
 ## Sviluppato con
 
